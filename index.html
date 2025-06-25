@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Planner | Home</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url("images/home.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      color: white;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      filter: blur(8px);
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 160px);
+      padding: 20px;
+      text-align: center;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    .intro {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .intro h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #ffccff;
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #f0e6ff;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px;
+        font-size: 1rem;
+      }
+
+      .intro {
+        padding: 20px;
+      }
+
+      .intro h2 {
+        font-size: 1.5rem;
+      }
+
+      .intro p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Your Event Planner</h1>
+    <nav>
+      <a href="register.html">Register</a>
+      <a href="plans.html">Event Plans</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>Make Every Moment Special</h2>
+      <p>We plan birthdays, weddings, retirement parties, and more. Let us help you create unforgettable memories with style and ease.</p>
+    </section>
+  </main>
+</body>
+</html>

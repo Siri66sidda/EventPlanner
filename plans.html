@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎊 Our Past Events & Plans</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("images/1702362010.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #e11313;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: inherit;
+      filter: blur(8px);
+      z-index: -1;
+    }
+
+    h2 {
+      text-align: center;
+      padding-top: 30px;
+      font-size: 2.5rem;
+      color: #e069a7;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 40px;
+      max-width: 1300px;
+      margin: auto;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .plan-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .plan-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.4);
+    }
+
+    .plan-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .plan-card .content {
+      padding: 20px;
+    }
+
+    .plan-card h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+
+    .plan-card p {
+      font-size: 1rem;
+      color: #de08ff;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.8rem;
+        padding: 20px;
+      }
+
+      .plans {
+        padding: 20px;
+        gap: 20px;
+      }
+
+      .plan-card img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>📸 Our Past Events & Plans</h2>
+  <section class="plans">
+    <div class="plan-card">
+      <img src="images/birthday-event-planner.jpg" alt="Birthday Plan" />
+      <div class="content">
+        <h3>🎂 Birthday Celebration</h3>
+        <p>A colorful and fun-filled birthday party with custom decorations, theme cakes, games, and laughter. We made a child’s dream come true! 🧁🎈</p>
+      </div>
+    </div>
+    <div class="plan-card">
+      <img src="images/crysta-flora.jpg" alt="Wedding Plan" />
+      <div class="content">
+        <h3>💍 Dream Wedding</h3>
+        <p>An elegant floral-themed wedding with luxurious decor, live music, and a heartwarming ceremony. Pure magic for the bride and groom! 💐✨</p>
+      </div>
+    </div>
+    <div class="plan-card">
+      <img src="images/afdc67bf709e32c2d340cb3fa6964cae.jpg" alt="Retirement Plan" />
+      <div class="content">
+        <h3>👴 Grand Retirement</h3>
+        <p>A classy retirement event with family speeches, slideshows of fond memories, and a golden tribute to a lifetime of achievements. 🏆📽️</p>
+      </div>
+    </div>
+    <div class="plan-card">
+      <img src="images/fondale-dolci-gender-reveal-party-cavallino.jpg" alt="Party Plan" />
+      <div class="content">
+        <h3>🎉 Themed Party</h3>
+        <p>A surprise gender reveal party with pastel balloons, sweet treats, and joyous moments shared among close friends and family. 💖🎁</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

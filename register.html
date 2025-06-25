@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎉 Event Booking</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: url("images/1702362010.png") center/cover no-repeat fixed;
+      color: #333;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: inherit;
+      filter: blur(8px);
+      z-index: -1;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #6A1B9A;
+      margin-top: 30px;
+      animation: fadeInDown 1s ease;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1.2s ease;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus, form select:focus {
+      outline: none;
+      border-color: #8e24aa;
+      box-shadow: 0 0 5px #ce93d8;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #8e24aa;
+      color: white;
+      padding: 12px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #6a1b9a;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    ::placeholder {
+      color: #999;
+    }
+  </style>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("S5mhnxXhEUtx0Emk8");
+    })();
+  </script>
+</head>
+<body>
+  <h2>📋 Booking for an Event</h2>
+  <form id="eventForm">
+    <input type="text" name="name" placeholder="👤 Full Name" required />
+    <input type="email" name="email" placeholder="📧 Your Email" required />
+    <input type="tel" name="phone" placeholder="📞 Phone Number" required />
+    
+    <label>🎈 Event Type:</label>
+    <select name="event_type" required>
+      <option disabled selected>-- Choose an Event --</option>
+      <option>🎂 Birthday</option>
+      <option>💍 Pre-wedding</option>
+      <option>👰 Wedding</option>
+      <option>👴 Retirement</option>
+      <option>🎊 Party</option>
+    </select>
+
+    <label>📅 Event Date:</label>
+    <input type="date" name="event_date" required />
+    
+    <textarea name="message" placeholder="💬 Special requests..."></textarea>
+    <input type="hidden" name="to_email" value="">
+
+    <button type="submit">✅ Submit Registration</button>
+  </form>
+
+  <script>
+    document.getElementById('eventForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const form = this;
+      form.querySelector('input[name="to_email"]').value = 
+          form.querySelector('input[name="email"]').value;
+
+      emailjs.sendForm('service_7pazd27', 'template_besg97c', form)
+        .then(function() {
+          alert('🎉 Form submitted successfully! Check your inbox for confirmation.');
+          form.reset();
+        }, function(error) {
+          alert('❌ Failed to send form. Please try again.');
+          console.error('EmailJS Error:', error);
+        });
+    });
+  </script>
+</body>
+</html>
