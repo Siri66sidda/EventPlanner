@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎂 Birthday Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      color: #333;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+      padding: 40px 20px;
+      text-align: center;
+      color: #6a1b9a;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 30px auto 60px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #d63384;
+      text-decoration: none;
+      border: 2px solid #d63384;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.3s ease, color 0.3s ease;
+      display: block;
+      width: fit-content;
+    }
+
+    .back-link:hover {
+      background: #d63384;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .gallery {
+        padding: 20px;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1> 🎉Gender Reveal Party Event Gallery 🎉</h1>
+  </header>
+
+  <div class="gallery">
+    <img src="images/party1.jpg" alt="Cake Cutting Moment">
+    <img src="images/party2.jpg" alt="Games and Fun">
+    <img src="images/party3.jpg" alt="Decorated Venue">
+    <img src="images/party4.jpg" alt="Family Celebration">
+    <img src="images/party5.jpg" alt="Family Celebration">
+  </div>
+
+  <a class="back-link" href="index.html">← Back to Events</a>
+</body>
+</html>
